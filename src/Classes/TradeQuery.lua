@@ -1068,7 +1068,7 @@ function TradeQueryClass:UpdateRealms()
 	end
 
 	-- perform a generic search to make sure POESESSID if valid.
-	self.tradeQueryRequests:PerformSearch("poe2", "Standard", [[{"query":{"status":{"option":"online"},"stats":[{"type":"and","filters":[]}]},"sort":{"price":"asc"}}]], function(response, errMsg) 
+	self.tradeQueryRequests:PerformSearch("poe2", "Standard", [[{"query":{"status":{"option":"available"},"stats":[{"type":"and","filters":[]}]},"sort":{"price":"asc"}}]], function(response, errMsg)
 		if errMsg then
 			self:SetNotice(self.controls.pbNotice, "Error: " .. tostring(errMsg))
 		end
